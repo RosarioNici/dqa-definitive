@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class nonconformita extends Model
 {
     //
+    protected $table = 'nonconformita';
 }

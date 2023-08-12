@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NonconformitaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', 'WelcomeController@index');
+Route::get('/', [WelcomeController::class, 'index']);
+
+Route::post('/ncprova', [NonconformitaController::class, 'store'])->name('nonconformita.store');
+Route::get('/ncprova/create', [NonconformitaController::class, 'create'])->name('nonconformita.create');
 
 
-Route::get('/registrazione', function () {
-    return view('registration');
-});
+// Route::get('/registrazione', function () {
+//     return view('registration');
+// });
