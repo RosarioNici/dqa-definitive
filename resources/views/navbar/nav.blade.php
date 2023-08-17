@@ -16,6 +16,9 @@
         <li class="nav-item">
           <a class="nav-link" href="ncprova">Non Confomità</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="prodotto">prodotto</a>
+        </li>
       </ul>
     </div>
   </div>
