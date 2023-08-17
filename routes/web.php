@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NonconformitaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +21,7 @@ use App\Http\Controllers\NonconformitaController;
 
 Route::get('/', [WelcomeController::class, 'index']);
 
-Route::post('/ncprova', [NonconformitaController::class, 'store'])->name('nonconformita.store');
-Route::get('/ncprova/create', [NonconformitaController::class, 'create'])->name('nonconformita.create');
+Route::resource('ncprova', NonconformitaController::class);
 
 
 // Route::get('/registrazione', function () {

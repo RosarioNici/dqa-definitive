@@ -2,29 +2,89 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\nonconformita;
 use Illuminate\Http\Request;
+use App\Models\nonconformita;
 
 class NonconformitaController extends Controller
 {
-    // Altri metodi del controller ...
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $nonconformitas = Nonconformita::all();
+        return view('ncprova', compact('nonconformitas'));
+    }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('ncprova');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
-        // Validazione dei dati inviati dal form
-        $validatedData = $request->validate([
-            'Data' => 'required|date',
-            //'Impianto' => 'required|exists:altra_tabella,id', // Assicurarsi che esista nella tabella corretta
-            'Tipologia' => 'required|in:prodotto,processo',
-            // Aggiungi qui le regole di validazione per le altre colonne
-        ]);
+        // Validazione dei dati inseriti $request->validate([...]);
 
-        // Creazione di una nuova istanza di NonConformita con i dati validati
-        $nonConformita = NonConformita::create($validatedData);
+        NonConformita::create($request->all());
 
-        // Puoi aggiungere ulteriori operazioni qui, ad esempio un messaggio di conferma
+        return redirect()->route('ncprova')->with('success', 'Dati inseriti con successo.');
+    }
 
-        // Reindirizzamento a una pagina dopo l'inserimento
-        return redirect()->route('ncprova.index');
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
     }
 }

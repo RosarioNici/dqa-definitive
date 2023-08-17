@@ -1,7 +1,4 @@
-
-
-
-
+@include('app')
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -15,6 +12,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/registrazione">Registrazione</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="ncprova">Non Confomità</a>
         </li>
       </ul>
     </div>
