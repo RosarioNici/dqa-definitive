@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\nonconformita;
+use App\Models\prodotto;
 
 class NonconformitaController extends Controller
 {
@@ -16,6 +17,8 @@ class NonconformitaController extends Controller
     {
         $nonconformitas = Nonconformita::all();
         return view('ncprova', compact('nonconformitas'));
+        $prodotti = Prodotto::all();
+        return view('ncprova', compact('prodotti'));
     }
 
     /**

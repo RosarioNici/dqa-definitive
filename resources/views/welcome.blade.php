@@ -23,6 +23,12 @@
                     <option value="distribuzione">Distribuzione</option>
                 </select>
             </div>
+            <select name="prodotto_id" id="prodotto_id" class="form-control">
+            <option value="">Seleziona un prodotto</option>
+                @foreach ($prodotti as $prodotto)
+                    <option value="{{ $prodotto->id }}">{{ $prodotto->Denominazione }} - {{$prodotto->Lotto}}</option>
+                @endforeach
+            </select>
             <div class="form-group">
                 <label for="Quantita">Quantità</label>
                 <input type="text" name="Quantita" class="form-control" value="{{ old('Quantita') }}">
