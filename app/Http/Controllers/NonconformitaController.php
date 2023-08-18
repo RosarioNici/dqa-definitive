@@ -16,9 +16,7 @@ class NonconformitaController extends Controller
     public function index()
     {
         $nonconformitas = Nonconformita::all();
-        return view('ncprova', compact('nonconformitas'));
-        $prodotti = Prodotto::all();
-        return view('ncprova', compact('prodotti'));
+        return view('nonconformita.index', compact('nonconformitas'));
     }
 
     /**
@@ -28,7 +26,9 @@ class NonconformitaController extends Controller
      */
     public function create()
     {
-        return view('ncprova');
+        $prodotti = prodotto::all();
+        return view('nonconformita.create', compact('prodotti'));
+        return view('nonconformita.create');
     }
 
     /**
@@ -41,9 +41,10 @@ class NonconformitaController extends Controller
     {
         // Validazione dei dati inseriti $request->validate([...]);
 
+
         NonConformita::create($request->all());
 
-        return redirect()->route('ncprova')->with('success', 'Dati inseriti con successo.');
+        return redirect()->route('nonconformita.index')->with('success', 'Dati inseriti con successo.');
     }
 
     /**
@@ -54,7 +55,8 @@ class NonconformitaController extends Controller
      */
     public function show($id)
     {
-        //
+        $nonconformita = nonconformita::find($id);
+        return view('nonconformita.show', compact('nonconformita'));
     }
 
     /**

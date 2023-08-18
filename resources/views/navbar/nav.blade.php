@@ -14,7 +14,7 @@
           <a class="nav-link" href="/registrazione">Registrazione</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="ncprova">Non Confomità</a>
+          <a class="nav-link" href="nonconformita">Non Confomità</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="prodotto">prodotto</a>

@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WelcomeController::class, 'index']);
 
-Route::resource('ncprova', NonconformitaController::class);
+Route::resource('nonconformita', NonconformitaController::class);
 Route::resource('prodotto', ProdottoController::class);
 
 
