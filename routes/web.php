@@ -29,3 +29,7 @@ Route::resource('prodotto', ProdottoController::class);
 // Route::get('/registrazione', function () {
 //     return view('registration');
 // });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
