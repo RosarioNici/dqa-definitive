@@ -11,7 +11,7 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/registrazione">Registrazione</a>
+          <a class="nav-link" href="register">Registrazione</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="nonconformita">Non Confomità</a>
