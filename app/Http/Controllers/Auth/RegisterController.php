@@ -74,7 +74,6 @@ class RegisterController extends Controller
             'Via' => $data['Via'],
             'Citta' => $data['Citta'],
             'Provincia' => $data['Provincia'],
-
             'RappresentanteLegale' => $data['RappresentanteLegale'],
             'Telefono' => $data['Telefono'],
             'Settore' => $data['Settore'],
@@ -82,5 +81,6 @@ class RegisterController extends Controller
             'ResponsabileQualita' => $data['ResponsabileQualita'],
 
         ]);
+        return view('/home', compact('user'));;
     }
 }
